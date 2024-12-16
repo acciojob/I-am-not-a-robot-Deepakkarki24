@@ -1,4 +1,3 @@
-//your code here
 // Selectors start
 let main = document.querySelector("main");
 // Selectors end
@@ -32,9 +31,11 @@ imgClassNames.forEach((image) => {
 });
 
 // paragrap
-let para = document.createElement("p");
-main.append(para);
-para.innerText =
+let h3Tag = document.createElement("h3");
+main.append(h3Tag);
+
+h3Tag.id = "h";
+h3Tag.innerText =
   "Please click on the identical tiles to verify that you are not a robot.";
 // paragrap
 
@@ -51,7 +52,9 @@ btnDiv.append(resetBtn, verifyBtn);
 
 btnDiv.className = "centerItems";
 resetBtn.className = "resetBtn";
+resetBtn.id = "reset";
 verifyBtn.className = "verifyBtn";
+verifyBtn.id = "verify";
 // buttons
 
 // final message
@@ -63,7 +66,9 @@ messagePara2.innerText =
   "We can't verify you as a human. You selected the non-identical tiles.";
 
 messagePara1.classList = "messagePara1";
+messagePara1.id = "para";
 messagePara2.classList = "messagePara2";
+messagePara2.id = "para";
 
 main.append(messagePara1, messagePara2);
 // final message
@@ -78,8 +83,10 @@ imgElem.forEach((img) => {
 let clickCount = 0;
 let img1 = "";
 let img2 = "";
+
 function selectedImage(e) {
   clickCount++;
+
   if (clickCount == 1) {
     img1 += e.target.classList;
     e.target.classList.add("selected");
